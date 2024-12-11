@@ -91,6 +91,24 @@ PeoPay-Core/
    # Edit .env to include PRIVATE_KEY, INFURA_API_KEY, etc.
    ```
 
+### `.env` Setup 
+
+1. Copy the `.env.example` file to a new `.env` file:
+  ```bash
+  cp .env.example .env
+  ```
+
+2. Open the `.env` file in a text editor and fill in the following fields:
+  - `PRIVATE_KEY`: Your wallet's private key for signing transactions.
+  - `INFURA_API_KEY`: (or similar provider) Sign up at Infura or Alchemy to get an API key.
+  - `ETHERSCAN_API_KEY`: If applicable, provide an API key for contract verification.
+  3. Example .env file:
+```plaintext
+PRIVATE_KEY=your_private_key_here
+INFURA_API_KEY=your_infura_api_key_here
+ETHERSCAN_API_KEY=your_etherscan_api_key_here
+```
+
 ## Compilation & Testing
 
 - Compile contracts:
@@ -104,6 +122,27 @@ PeoPay-Core/
   ```
   
 All tests are located in the `test/` directory, covering PeoCoin, Staking, Governance, Conversion, and DCS functionality. Each test file includes inline comments for clarity.
+
+### Running Tests
+
+- Local Testing:
+  
+Use the default Hardhat network for local testing:
+```bash
+npx hardhat test
+```
+This requires no `.env` setup and is recommended for quick iterations.
+
+- Testnet Testing:
+  
+To test on a public testnet (e.g., Goerli), ensure your .env file is correctly configured with:
+
+  - A funded wallet's `PRIVATE_KEY`.
+  - The appropriate `RPC_URL` from providers like Infura or Alchemy.Then, run:
+
+```bash
+npx hardhat test --network goerli
+```
 
 ## Code Coverage
 
