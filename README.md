@@ -1,5 +1,17 @@
 # PeoPay-Core
 
+[![Build Status](https://img.shields.io/github/actions/workflow/status/YourUsername/PeoPay-Core/ci.yml?branch=main)](https://github.com/YourUsername/PeoPay-Core/actions)
+[![Coverage Status](https://img.shields.io/coveralls/github/YourUsername/PeoPay-Core/main.svg)](https://coveralls.io/github/YourUsername/PeoPay-Core?branch=main)
+[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Docs](https://img.shields.io/badge/docs-peopay.io-informational)](https://docs.peopay.io/)
+[![Website](https://img.shields.io/badge/website-peopay.io-blue)](https://peopay.io/)
+[![Network: Polygon](https://img.shields.io/badge/network-polygon-8247E5?logo=polygon)](https://polygon.technology/)
+[![ERC-20 Standard](https://img.shields.io/badge/ERC-20-blue.svg)](https://eips.ethereum.org/EIPS/eip-20)
+[![Made with Hardhat](https://img.shields.io/badge/made%20with-hardhat-FF8800.svg)](https://hardhat.org/)
+[![Uses OpenZeppelin Contracts](https://img.shields.io/badge/OpenZeppelin-Contracts-brightgreen.svg)](https://openzeppelin.com/contracts/)
+[![Verified on Polygonscan](https://img.shields.io/badge/verified%20on-polygonscan-blue.svg)](https://polygonscan.com/)
+
+
 **PeoPay-Core** is the foundational repository for the [PeoPay](https://peopay.io/) ecosystem. It contains the core smart contracts and logic for the PeoCoin token (PEO), staking, governance, conversion (crypto-to-mobile), and the Dynamic Contribution Scoring (DCS) system. These contracts together form a decentralized infrastructure that supports staking rewards, governance proposals, transaction conversions, and a flexible scoring mechanism to reward active contributors.
 
 For a more detailed technical overview and developer guides, refer to the official [PeoPay Documentation](https://docs.peopay.io/).
