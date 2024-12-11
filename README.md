@@ -1,7 +1,4 @@
 # PeoPay-Core
-
-[![Build Status](https://img.shields.io/github/actions/workflow/status/YourUsername/PeoPay-Core/ci.yml?branch=main)](https://github.com/PeoPay/PeoPay-Core/actions)
-[![Coverage Status](https://img.shields.io/coveralls/github/YourUsername/PeoPay-Core/main.svg)](https://coveralls.io/github/PeoPay/PeoPay-Core?branch=main)
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Docs](https://img.shields.io/badge/docs-peopay.io-informational)](https://docs.peopay.io/)
 [![Website](https://img.shields.io/badge/website-peopay.io-blue)](https://peopay.io/)
