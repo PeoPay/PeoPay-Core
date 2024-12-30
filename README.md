@@ -8,6 +8,14 @@
 [![Uses OpenZeppelin Contracts](https://img.shields.io/badge/OpenZeppelin-Contracts-brightgreen.svg)](https://openzeppelin.com/contracts/)
 [![Verified on Polygonscan](https://img.shields.io/badge/verified%20on-polygonscan-blue.svg)](https://polygonscan.com/)
 
+## Amoy Testnet Contracts
+
+| Contract   | Address                                    | Description                                                        |
+|------------|--------------------------------------------|--------------------------------------------------------------------|
+| PeoCoin    | [0x7d66d92a1cba3d8775890a6815eb17f45efdb2e1](https://www.oklink.com/amoy/token/0x7d66d92a1cba3d8775890a6815eb17f45efdb2e1) | Test deployment of PEO token on the Amoy Testnet.                  |
+| Staking    | [0x122B9bE8de0e9288C1c8201378086D04b4FFD265](0x122B9bE8de0e9288C1c8201378086D04b4FFD265) | Test deployment of Staking contract on the Amoy Testnet.           |
+| DCS        | [0x26EeB0c59277D00df23204b86A9C5beE4E9c3DA7](https://www.oklink.com/amoy/address/0x26eeb0c59277d00df23204b86a9c5bee4e9c3da7) | Test deployment of Dynamic Contribution Scoring on the Amoy Testnet. |
+
 **PeoPay-Core** is the foundational repository for the [PeoPay](https://peopay.io/) ecosystem. It contains the core smart contracts and logic for the PeoCoin token (PEO), staking, governance, conversion (crypto-to-mobile), and the Dynamic Contribution Scoring (DCS) system. These contracts form a decentralized infrastructure that supports staking rewards, governance proposals, transaction conversions, and a flexible scoring mechanism to reward active contributors.
 
 For a detailed technical overview and developer guides, refer to the official [PeoPay Documentation](https://docs.peopay.io/).
