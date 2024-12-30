@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /// @dev This contract inherits from OpenZeppelin’s ERC20 and Ownable:
 ///      - ERC20 provides a secure and standard implementation of fungible tokens.
 ///      - Ownable restricts certain functions (like minting) to the contract owner.
-///      
+///
 ///      The contract mints an initial supply to the owner. Additional tokens can be minted or burned by the owner, allowing
 ///      for flexible supply management.
 contract PeoCoin is ERC20, Ownable {
@@ -18,7 +18,7 @@ contract PeoCoin is ERC20, Ownable {
     /// @dev The constructor sets the token’s name and symbol via ERC20 and calls Ownable(msg.sender) to set the contract’s owner.
     ///      It mints 1,000,000 PEO tokens to the owner’s address.
     constructor() ERC20("PeoCoin", "PEO") Ownable(msg.sender) {
-        _mint(msg.sender, 1_000_000 * 10**decimals());
+        _mint(msg.sender, 1_000_000 * 10 ** decimals());
     }
 
     /// @notice Mints new PEO tokens to a specified address.

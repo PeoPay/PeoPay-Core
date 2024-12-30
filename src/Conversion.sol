@@ -2,12 +2,12 @@
 pragma solidity ^0.8.28;
 
 import "./interfaces/IPeoCoin.sol";
-import "./interfaces/IDCS.sol"; 
+import "./interfaces/IDCS.sol";
 
 /// @title Conversion Contract for Crypto-to-Mobile Money Transfers
 /// @author dkrizhanovskyi
 /// @notice This contract allows users to convert their PEO tokens into mobile money by emitting events that an off-chain backend service can respond to.
-/// @dev The contract locks PEO tokens when a user requests a conversion. An authorized backend service then confirms the conversion after off-chain settlement. 
+/// @dev The contract locks PEO tokens when a user requests a conversion. An authorized backend service then confirms the conversion after off-chain settlement.
 contract Conversion {
     /// @notice The PEO token contract used for transfers.
     /// @dev Must implement IPeoCoin interface, providing `transferFrom` and other ERC-20-like methods.

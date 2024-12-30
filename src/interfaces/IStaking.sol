@@ -9,9 +9,5 @@ interface IStaking {
     /// @return amount The total amount of tokens the user has staked.
     /// @return startTimestamp The timestamp when the user's stake started.
     /// @return exists A boolean indicating whether the user currently has an active stake.
-    function stakes(address user) external view returns (
-        uint256 amount,
-        uint256 startTimestamp,
-        bool exists
-    );
+    function stakes(address user) external view returns (uint256 amount, uint256 startTimestamp, bool exists);
 }

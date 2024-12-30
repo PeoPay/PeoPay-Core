@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.28;
 
-import "./interfaces/IPeoCoin.sol"; 
+import "./interfaces/IPeoCoin.sol";
 
 /// @title Staking Contract for PEO Tokens
 /// @author dkrizhanovskyi
@@ -76,7 +76,6 @@ contract Staking {
 
         return baseReward;
     }
-
 
     /// @notice Unstakes the user's tokens and pays out the accrued rewards.
     /// @dev The user must have passed the lock period. If successful, returns staked amount + reward to the user and removes their stake info.

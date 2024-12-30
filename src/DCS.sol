@@ -2,8 +2,8 @@
 pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./interfaces/IPeoCoin.sol"; 
-import "./interfaces/IStaking.sol"; 
+import "./interfaces/IPeoCoin.sol";
+import "./interfaces/IStaking.sol";
 
 /// @title DCS (Dynamic Contribution Scoring)
 /// @author dkrizhanovskyi
@@ -36,8 +36,8 @@ contract DCS is Ownable {
 
     /// @notice Computes the DCS score for a given user.
     /// @dev The score formula:
-    ///      score = (tokenBalance * tokenWeight) 
-    ///               + (stakedAmount * stakeWeight) 
+    ///      score = (tokenBalance * tokenWeight)
+    ///               + (stakedAmount * stakeWeight)
     ///               + ((stakedDurationInDays) * timeWeight)
     ///      stakedDurationInDays = (block.timestamp - startTimestamp) / 1 days
     /// @param user The address of the user whose DCS score is being queried.

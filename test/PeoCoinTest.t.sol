@@ -15,15 +15,15 @@ contract PeoCoinTest is Test {
     }
 
     function testMinting() public {
-        peoCoin.mint(user, 1_000 * 10**18);
-        assertEq(peoCoin.balanceOf(user), 1_000 * 10**18);
+        peoCoin.mint(user, 1_000 * 10 ** 18);
+        assertEq(peoCoin.balanceOf(user), 1_000 * 10 ** 18);
     }
 
     function testBurning() public {
-        peoCoin.mint(user, 500 * 10**18);
+        peoCoin.mint(user, 500 * 10 ** 18);
         vm.startPrank(user);
-        peoCoin.burn(200 * 10**18);
-        assertEq(peoCoin.balanceOf(user), 300 * 10**18);
+        peoCoin.burn(200 * 10 ** 18);
+        assertEq(peoCoin.balanceOf(user), 300 * 10 ** 18);
         vm.stopPrank();
     }
 }

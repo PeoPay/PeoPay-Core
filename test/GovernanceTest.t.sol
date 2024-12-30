@@ -17,21 +17,20 @@ contract GovernanceTest is Test {
     address private constant voter1 = address(2);
     address private constant voter2 = address(3);
 
-    uint256 private constant quorum = 1000 * 10**18;
-
+    uint256 private constant quorum = 1000 * 10 ** 18;
 
     function setUp() public {
         mockPeoToken = new MockPeoCoin();
         mockDCS = new MockDCS();
 
         // Mint tokens and set scores
-        mockPeoToken.mint(proposer, 1000 * 10**18);
-        mockPeoToken.mint(voter1, 500 * 10**18);
-        mockPeoToken.mint(voter2, 700 * 10**18);
+        mockPeoToken.mint(proposer, 1000 * 10 ** 18);
+        mockPeoToken.mint(voter1, 500 * 10 ** 18);
+        mockPeoToken.mint(voter2, 700 * 10 ** 18);
 
-        mockDCS.setScore(proposer, 1000 * 10**18);
-        mockDCS.setScore(voter1, 500 * 10**18);
-        mockDCS.setScore(voter2, 700 * 10**18);
+        mockDCS.setScore(proposer, 1000 * 10 ** 18);
+        mockDCS.setScore(voter1, 500 * 10 ** 18);
+        mockDCS.setScore(voter2, 700 * 10 ** 18);
 
         governance = new Governance(address(mockPeoToken), address(mockDCS));
     }
@@ -43,7 +42,8 @@ contract GovernanceTest is Test {
 
         governance.createProposal(description);
 
-        (address storedProposer, string memory storedDescription, uint256 startTime, uint256 endTime,,,) = governance.proposals(0);
+        (address storedProposer, string memory storedDescription, uint256 startTime, uint256 endTime,,,) =
+            governance.proposals(0);
 
         assertEq(storedProposer, proposer, "Proposer mismatch");
         assertEq(storedDescription, description, "Description mismatch");
@@ -66,7 +66,7 @@ contract GovernanceTest is Test {
         vm.startPrank(voter1);
         governance.vote(0, true);
 
-        (, , , , uint256 yesVotes, uint256 noVotes,) = governance.proposals(0);
+        (,,,, uint256 yesVotes, uint256 noVotes,) = governance.proposals(0);
 
         assertEq(yesVotes, mockDCS.getScore(voter1), "Yes votes mismatch");
         assertEq(noVotes, 0, "No votes mismatch");
@@ -100,7 +100,7 @@ contract GovernanceTest is Test {
 
         governance.executeProposal(0);
 
-        (, , , , , , bool executed) = governance.proposals(0);
+        (,,,,,, bool executed) = governance.proposals(0);
 
         assertEq(executed, true, "Proposal not marked as executed");
     }

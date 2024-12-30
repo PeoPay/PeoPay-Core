@@ -2,8 +2,8 @@
 pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./interfaces/IPeoCoin.sol"; 
-import "./interfaces/IDCS.sol"; 
+import "./interfaces/IPeoCoin.sol";
+import "./interfaces/IDCS.sol";
 
 /// @title Governance Contract for Proposals and Voting
 /// @author dkrizhanovskyi
@@ -36,9 +36,9 @@ contract Governance is Ownable {
     mapping(uint256 => mapping(address => bool)) public hasVoted;
 
     /// @notice Voting parameters.
-    uint256 public votingPeriod = 3 days;          // Duration for voting
-    uint256 public quorum = 1000 * 1e18;           // Minimum weighted votes required
-    uint256 public majorityPercentage = 50;        // Percentage of yes votes needed > this value
+    uint256 public votingPeriod = 3 days; // Duration for voting
+    uint256 public quorum = 1000 * 1e18; // Minimum weighted votes required
+    uint256 public majorityPercentage = 50; // Percentage of yes votes needed > this value
 
     /// @notice Emitted when a proposal is created.
     /// @param proposalId The ID of the newly created proposal.
@@ -72,15 +72,17 @@ contract Governance is Ownable {
     function createProposal(string calldata description) external {
         require(peoToken.balanceOf(msg.sender) > 0, "Need PEO to propose");
 
-        proposals.push(Proposal({
-            proposer: msg.sender,
-            description: description,
-            startTime: block.timestamp,
-            endTime: block.timestamp + votingPeriod,
-            yesVotes: 0,
-            noVotes: 0,
-            executed: false
-        }));
+        proposals.push(
+            Proposal({
+                proposer: msg.sender,
+                description: description,
+                startTime: block.timestamp,
+                endTime: block.timestamp + votingPeriod,
+                yesVotes: 0,
+                noVotes: 0,
+                executed: false
+            })
+        );
 
         emit ProposalCreated(proposals.length - 1, msg.sender, description);
     }

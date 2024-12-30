@@ -18,12 +18,12 @@ contract DCSTest is Test {
         // Deploy PeoCoin and Staking contracts
         peoCoin = new PeoCoin();
         staking = new Staking(address(peoCoin));
-        
+
         // Deploy DCS contract
         dcs = new DCS(address(peoCoin), address(staking));
 
         // Mint tokens to the user
-        peoCoin.mint(user, 1_000 * 10**18);
+        peoCoin.mint(user, 1_000 * 10 ** 18);
     }
 
     function testInitialWeights() public {
@@ -35,8 +35,8 @@ contract DCSTest is Test {
     function testScoreCalculation() public {
         // User stakes tokens
         vm.startPrank(user);
-        peoCoin.approve(address(staking), 500 * 10**18);
-        staking.stake(500 * 10**18);
+        peoCoin.approve(address(staking), 500 * 10 ** 18);
+        staking.stake(500 * 10 ** 18);
         vm.stopPrank();
 
         // Fast forward time
